@@ -1,0 +1,19 @@
+Fix admin login
+  doesn't call JS function
+
+Allow-Control-Allow-Origin
+  WHY: extension needs to get AJAX request and parse it
+    from Light speed Systems
+
+make admin page
+  choose what categories to allow / block
+  view accessed categories
+    add new category to sync list on request
+
+ 
+
+ SOURCES:
+ https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
+ https://www.html5rocks.com/en/tutorials/cors/
+ view-source:https://archive.lightspeedsystems.com/SubmitDomain.php?Domain=google.com
+ https://archive.lightspeedsystems.com/SubmitDomain.php?Domain=http%3A%2F%2Fstackoverflow.com
