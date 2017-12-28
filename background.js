@@ -6,9 +6,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     /*if (info.url.includes("keyword")){
       return {redirectUrl: "http://block.ednerd.net/block.html"};
     }*/
-    if (info.url.contains("lightspeed")){
-      return info.url;
-      window.alert(info.url);
+    if (info.url.includes("block.ednerd")){
+      console.log("Block Request");
+      return;
     }
     var xhr = createCORSRequest('GET', info.url);
     if (!xhr) {
@@ -36,11 +36,14 @@ chrome.webRequest.onBeforeRequest.addListener(
 
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
+  window.alert("Made Request");
   if ("withCredentials" in xhr) {
-    xhr.open(method, "https://archive.lightspeedsystems.com/SubmitDomain.php?Domain="+url, true);
+    xhr.open(method, "http://block.ednerd.net/filter.php?Domain="+url, true);
+    // xhr.open(method, "https://archive.lightspeedsystems.com/SubmitDomain.php?Domain="+url, true);
   } else if (typeof XDomainRequest != "undefined") { requests.
     xhr = new XDomainRequest();
-    xhr.open(method, "https://archive.lightspeedsystems.com/SubmitDomain.php?Domain="+url);
+    xhr.open(method, "http://block.ednerd.net/filter.php?Domain="+url);
+    //xhr.open(method, "https://archive.lightspeedsystems.com/SubmitDomain.php?Domain="+url);
   } else {
     xhr = null;
   }

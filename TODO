@@ -2,6 +2,7 @@ Fix admin login
   doesn't call JS function
 
 Allow-Control-Allow-Origin
+  NOW: Extension -> EdNerd -> Lightspeed -> EdNerd -> extension
   WHY: extension needs to get AJAX request and parse it
     from Light speed Systems
 
@@ -10,7 +11,7 @@ make admin page
   view accessed categories
     add new category to sync list on request
 
- 
+
 
  SOURCES:
  https://stackoverflow.com/questions/3102819/disable-same-origin-policy-in-chrome
